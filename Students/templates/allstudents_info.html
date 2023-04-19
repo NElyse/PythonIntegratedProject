@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>List of All Registered Students</h1>
+{% for x in student %}
+<div>
+    <h2>Names: {{ x.first_name }}  {{ x.last_name }}</h2>
+    <p>Email: {{ x.Regno }}</p>
+    <p>Email: {{ x.email }}</p>
+    <p>NID: {{ x.nid }}</p>
+    <p>Address: {{ x.phone_number }}</p>
+</div>
+{% endfor %}
+  
+
+
+<a href="#">Kwinjira</a>
+<a href="#">Gusohoka</a>
+</body>
+</html>

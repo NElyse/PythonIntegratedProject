@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+ {% for x in student %}
+    <h1>More information about  {{ x.last_name }}</h1>
+   
+    <div>
+        <h2>Names: {{ x.first_name }}  {{ x.last_name }}</h2>
+        <p>Email: {{ x.Regno }}</p>
+        <p>Email: {{ x.email }}</p>
+        <p>NID: {{ x.nid }}</p>
+        <p>Address: {{ x.phone_number }}</p>
+    </div>
+    {% endfor %}
+      
+
+</body>
+</html>
