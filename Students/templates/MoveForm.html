@@ -3,6 +3,9 @@
 <h2>Movement</h2>
 <form method="post">
     {% csrf_token %}
+    {% if x.Regno == 20RP11582 %}
+        
+    {% endif %} 
     {{ form.as_p }}
     <button type="submit">move</button>
 </form>

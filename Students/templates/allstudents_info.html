@@ -1,47 +1,53 @@
-<!DOCTYPE html>
 <html>
-<body>
 
-<h1>List of All Registered Students</h1>
-
-
-
-
-
-<table border="1">
-    <tr>
-
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Reg_Number </th>
-        <th>Email</th>
-        <th>NID</th>
-        <th>Phone_number</th>
-        <th>MovementReport</th>
-    </tr>
-    {% for x in student %}
-    <tr>
-        <td>{{ x.first_name }}</td>
-        <td>{{ x.last_name }}</td>
-        <td> {{ x.Regno }}</td>
-        <td> {{ x.email }}</td>
-        <td>{{ x.nid }}</td>
-        <td>{{ x.phone_number }}</td>
-
-
-       <td><a href="/{{ x.id }}">More Details</a></td> 
-        
-        
-    </tr>
-    {% endfor %}
-</table>
-
+<head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"crossorigin="anonymous"></script>
 
   
+</head>
+
+<body>
+    <div class="container sm-10%, md-30%, lg-70%, xl-100%, xxl-auto" >
+        <div class="row my-5">
+            <h1>List of All Registered Students</h1>
+            <div class="col-md-12">
+
+                <table  class="table">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Reg_Number </th>
+                        <th>Email</th>
+                        <th>NID</th>
+                        <th>Phone_number</th>
+                        <th>MovementReport</th>
+                    </tr>
+                    {% for x in student %}
+                    <tr>
+                        <td>{{ x.first_name }}</td>
+                        <td>{{ x.last_name }}</td>
+                        <td> {{ x.Regno }}</td>
+                        <td> {{ x.email }}</td>
+                        <td>{{ x.nid }}</td>
+                        <td>{{ x.phone_number }}</td>
+                        <td><a href="studentDetail">More Details</a></td>
+                    </tr>
+
+                    {% endfor %}
 
 
-<a href="#">Kwinjira</a>
-<a href="#">Gusohoka</a>
-<a href="#">Gusohoka</a>
+                </table>
+                <a href="#">Kwinjira</a>
+                <a href="#">Gusohoka</a>
+                <a href="#">Gusohoka</a>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+{% include 'footer.html' %} 
+
 </html>

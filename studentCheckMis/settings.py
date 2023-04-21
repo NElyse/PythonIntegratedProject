@@ -25,9 +25,7 @@ SECRET_KEY = 'django-insecure-l3n9potk*5nrmb57)kt)7=h4ohojx6(#h!=p_bk#ai9g+2b(09
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,11 +38,16 @@ INSTALLED_APPS = [
 
     'Students',
 
+    'django_bootstrap5',
+    "crispy_forms",
+    "crispy_bootstrap5",
+  
 
-    'crispy_forms',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -94,11 +97,10 @@ DATABASES = {
         'NAME': 'PythonIntregratedProject',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': '127.0.0.1', # if using localhost, use '127.0.0.1'
-        'PORT': '3306', # default port for MySQL is 3306
+        'HOST': '127.0.0.1',  # if using localhost, use '127.0.0.1'
+        'PORT': '3306',  # default port for MySQL is 3306
     }
 }
-
 
 
 # Password validation

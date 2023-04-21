@@ -1,39 +1,42 @@
 <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-     
-    </head>
-     <body>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-8">
-                {% block content %}
-                <h1 class="mt-1">More information about {{ x.last_name }}</h1>
-                <hr class="mt-0 mb-4">
-               
-               
-                    {% for x in student %}
-                     
-                      
-                       <div>
-                           <h2>Names: {{ x.first_name }}  {{ x.last_name }}</h2>
-                           <p>Email: {{ x.Regno }}</p>
-                           <p>Email: {{ x.email }}</p>
-                           <p>NID: {{ x.nid }}</p>
-                           <p>Address: {{ x.phone_number }}</p>
-                       </div>
-                       {% endfor %}
-                   
-                       {% comment %} <a href="{% url 'recordfunction' %}">Record</a> {% endcomment %}
-                   
-                       <p><a href="{% url 'allstudents' %}">Back</a></p>
-                       <p><a href="{% url 'register' %}">studentRegister</a></p>
-                   
-                {% endblock %}
-              </div>
-            </div>
-          </div>
-        </body>
-      </html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8">
+        {% block content %}
+        <h1 class="mt-1">More information about {{ x.last_name }}</h1>
+        <hr class="mt-0 mb-4">
+
+        {% for x in student %}
+        <div>
+          <h2>Names: {{ x.first_name }} {{ x.last_name }}</h2>
+          <p>Email: {{ x.Regno }}</p>
+          <p>Email: {{ x.email }}</p>
+          <p>NID: {{ x.nid }}</p>
+          <p>Address: {{ x.phone_number }}</p>
+        </div>
+        {% endfor %}
+
+        {% comment %} <a href="{% url 'recordfunction' %}">Record</a> {% endcomment %}
+
+        <p><a href="{% url 'studentsAll' %}">BackALL</a></p>
+        <p><a href="{% url 'register' %}">studentRegister</a></p>
+
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

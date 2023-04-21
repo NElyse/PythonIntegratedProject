@@ -3,12 +3,13 @@ from . import views
 
 urlpatterns = [
     path('testing/', views.test, name='testing'),
-    path('students/', views.allstudents, name='allstudents'),
-    path('studentDetail/<int:id>', views.studentDetails, name='studentDetails'),
-    path('details/<int:pk>/', views.studentDetails, name='details'),
-    path('studentRegister/', views.register, name='register'),
-    path('Back/', views.allstudents, name='Back'),
+    path('studentRegister/',views.register, name='register'),
     
-    path('Back/', views.recordfunction, name='Back'),
+    path('studentsAll/', views.allstudents, name='allstudents'),
+    path('studentDetail/', views.studentDetail, name='studentDetails'),
+    path('SelectDatarecord/', views.selectDataToInsertMovementReport, name='SelectDataTorecord'),
+    path('recordMovement/', views.recordMovement, name='recordMovement'),
+    path('viewReport/', views.reportData, name='viewReportForOne'),
+    path('viewReportAll/', views.reportDataAll, name='viewReportForAll'),
    
 ]
