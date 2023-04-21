@@ -3,19 +3,45 @@
 <body>
 
 <h1>List of All Registered Students</h1>
-{% for x in student %}
-<div>
-    <h2>Names: {{ x.first_name }}  {{ x.last_name }}</h2>
-    <p>Email: {{ x.Regno }}</p>
-    <p>Email: {{ x.email }}</p>
-    <p>NID: {{ x.nid }}</p>
-    <p>Address: {{ x.phone_number }}</p>
-</div>
-{% endfor %}
+
+
+
+
+
+<table border="1">
+    <tr>
+
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Reg_Number </th>
+        <th>Email</th>
+        <th>NID</th>
+        <th>Phone_number</th>
+        <th>MovementReport</th>
+    </tr>
+    {% for x in student %}
+    <tr>
+        <td>{{ x.first_name }}</td>
+        <td>{{ x.last_name }}</td>
+        <td> {{ x.Regno }}</td>
+        <td> {{ x.email }}</td>
+        <td>{{ x.nid }}</td>
+        <td>{{ x.phone_number }}</td>
+
+
+       <td><a href="/{{ x.id }}">More Details</a></td> 
+        
+        
+    </tr>
+    {% endfor %}
+</table>
+
+
   
 
 
 <a href="#">Kwinjira</a>
+<a href="#">Gusohoka</a>
 <a href="#">Gusohoka</a>
 </body>
 </html>

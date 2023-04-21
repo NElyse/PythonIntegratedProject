@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.template import loader
 from .models import Studentinfo
-from django.shortcuts import render, redirect
-from .forms import registerForm
+from django.shortcuts import render, redirect, get_object_or_404
+from .forms import registerForm, RecordForm
+from django.http import HttpResponseRedirect
 
 
 def test(request):
@@ -25,7 +26,7 @@ def allstudents(request):
 
 def studentDetails(request):
   # students = Studentinfo.objects.all().values()
-  students = Studentinfo.objects.all().filter(id=3)
+  students = get_object_or_404(Studentinfo, id=id)
   template = loader.get_template('studentDetails.html')
   
   context = {
@@ -42,14 +43,31 @@ def register(request):
     if request.method == 'POST':
         form = registerForm(request.POST)
         if form.is_valid():
-            Student = Studentinfo.objects.create_user(
-                nid=form.cleaned_data['nid'],
-                midle_name=form.cleaned_data['midle_name'],
-            )
-            form.save()
+           form.save()
+           
+        
+        return redirect('students')
     else:
         form = registerForm()
+ 
     return render(request, 'RegisterForm.html', {'form': form})
+  
+  
+  
+def recordfunction(request):
+  if request.method == 'POST':
+      form = RecordForm(request.POST)
+      if form.is_valid():
+          form.save()
+      
+      return HttpResponseRedirect('/students/')
+  else:
+      form = registerForm()
+  return render(request, 'MoveForm.html', {'form': form})
+  
+
+
+
   
   
 

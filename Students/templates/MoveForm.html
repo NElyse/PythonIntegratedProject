@@ -1,0 +1,9 @@
+<h1>Hello this is form to use in Movement</h1>
+{% block content %}
+<h2>Movement</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">move</button>
+</form>
+{% endblock %}
