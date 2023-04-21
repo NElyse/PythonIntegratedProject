@@ -9,7 +9,7 @@ from .forms import registerForm, RecordForm
 
 
 def test(request):
-  template = loader.get_template('home.html')
+  template = loader.get_template('base.html')
   return HttpResponse(template.render())
 
 
