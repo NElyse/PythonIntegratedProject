@@ -28,7 +28,10 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <form method="post" action="{% url 'logoutFunction' %}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
                 </li>
             </ul>
         </div>

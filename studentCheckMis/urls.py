@@ -19,12 +19,12 @@ from django.urls import include
 from django.urls import path
 
 from Students.controllers import testController
-from Students import way
+from Students import Route
 from Students.views import register
 
 
 urlpatterns = [
-    path('', include('Students.way')),
+    path('', include('Students.Route')),
     
     path('admin/', admin.site.urls),
     path('test/', testController.index),

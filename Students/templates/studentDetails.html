@@ -18,7 +18,10 @@
         <h1 class="mt-1">More information about {{ x.last_name }}</h1>
         <hr class="mt-0 mb-4">
 
+
+
         {% for x in student %}
+
         <div>
           <h2>Names: {{ x.first_name }} {{ x.last_name }}</h2>
           <p>Email: {{ x.Regno }}</p>
@@ -27,6 +30,9 @@
           <p>Address: {{ x.phone_number }}</p>
         </div>
         {% endfor %}
+
+
+
 
         {% comment %} <a href="{% url 'recordfunction' %}">Record</a> {% endcomment %}
 

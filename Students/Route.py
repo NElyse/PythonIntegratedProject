@@ -11,5 +11,7 @@ urlpatterns = [
     path('recordMovement/', views.recordMovement, name='recordMovement'),
     path('viewReport/', views.reportData, name='viewReportForOne'),
     path('viewReportAll/', views.reportDataAll, name='viewReportForAll'),
+    path('login/', views.loginFunction, name='login'),
+    path('logout/', views.logoutFunction, name='logout'),
    
 ]
