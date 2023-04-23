@@ -92,9 +92,9 @@ def reportDataAll(request):
 
 def loginFunction(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        Username = request.POST['username']
+        Password = request.POST['Password']
+        user = authenticate(request, Username=Username, Password=Password)
         if user is not None:
             login(request, user)
             return redirect('studentsAll')
